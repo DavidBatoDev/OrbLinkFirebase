@@ -22,6 +22,8 @@ body {
 /* Orb container */
 .orbs-container {
   display: flex;
+  flex-direction: column;
+  gap: 2;
   align-items: center;
   gap: 30px;
 }
@@ -30,17 +32,17 @@ body {
 .orb {
   width: 120px;
   height: 120px;
-  background-color: #4b0082; /* Indigo color for the orb */
+  background-color: #1e90ff; /* Dodger blue for the orb */
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4), 0 0 40px rgba(75, 0, 130, 0.6); /* Darker shadow + glowing effect */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4), 0 0 40px rgba(30, 144, 255, 0.6); /* Darker shadow + glowing effect */
   transition: all 0.4s ease-in-out;
   position: relative;
   overflow: hidden;
 }
 
 .orb.lit {
-  background-color: #8a2be2; /* Lighter purple when lit up */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 50px rgba(138, 43, 226, 0.8); /* Glowing effect */
+  background-color: #00bfff; /* Lighter sky blue when lit up */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 50px rgba(0, 191, 255, 0.8); /* Glowing effect */
   animation: orbGlow 1.5s infinite alternate;
 }
 
@@ -51,7 +53,7 @@ body {
   left: 10%;
   width: 80%;
   height: 80%;
-  background: radial-gradient(circle, rgba(138, 43, 226, 0.5) 0%, rgba(75, 0, 130, 0.2) 80%);
+  background: radial-gradient(circle, rgba(0, 191, 255, 0.5) 0%, rgba(30, 144, 255, 0.2) 80%);
   border-radius: 50%;
   opacity: 0.6;
   animation: orbPulse 2s infinite ease-in-out;
@@ -94,7 +96,7 @@ body {
 .light-button {
   padding: 15px 25px;
   font-size: 18px;
-  background-color: #8a2be2; /* Matching purple */
+  background-color: #00bfff; /* Matching blue */
   color: white;
   border: none;
   border-radius: 30px;
@@ -104,6 +106,6 @@ body {
 }
 
 .light-button:hover {
-  background-color: #7a1ee0;
-  box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
+  background-color: #009de0;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
 }
