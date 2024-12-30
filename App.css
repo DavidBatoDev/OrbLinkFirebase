@@ -1,0 +1,111 @@
+/* General styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212; /* Dark background for the theme */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Main container */
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Orb container */
+.orbs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Witch's Orb styling */
+.orb {
+  width: 120px;
+  height: 120px;
+  background-color: #434547; /* Dodger blue for the orb */
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4), 0 0 40px rgba(30, 144, 255, 0.6); /* Darker shadow + glowing effect */
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.orb.lit {
+  background-color: #00bfff; /* Lighter sky blue when lit up */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 50px rgba(0, 191, 255, 0.8); /* Glowing effect */
+  animation: orbGlow 1.5s infinite alternate;
+}
+
+.orb.lit:before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(0, 191, 255, 0.5) 0%, rgba(30, 144, 255, 0.2) 80%);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: orbPulse 2s infinite ease-in-out;
+}
+
+@keyframes orbGlow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes orbPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+/* Button styling */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.light-button {
+  padding: 15px 25px;
+  font-size: 18px;
+  background-color: #00bfff; /* Matching blue */
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.light-button:hover {
+  background-color: #009de0;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+}

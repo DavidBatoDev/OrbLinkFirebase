@@ -1,111 +1,77 @@
-/* General styles */
+/* App.css */
+
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #121212; /* Dark background for the theme */
-  color: white;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
-  overflow: hidden; /* Prevent scrolling */
+  background-color: #1a1a1a;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
 }
 
-/* Main container */
 .app-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 30px;
+  justify-content: center;
+  background-color: #2b2b2b;
+  border: 4px solid #ff6b3a;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(255, 107, 58, 0.8);
 }
 
-/* Orb container */
 .orbs-container {
   display: flex;
   flex-direction: column;
-  gap: 2;
   align-items: center;
-  gap: 30px;
 }
 
-/* Witch's Orb styling */
 .orb {
-  width: 120px;
-  height: 120px;
-  background-color: #434547; /* Dodger blue for the orb */
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4), 0 0 40px rgba(30, 144, 255, 0.6); /* Darker shadow + glowing effect */
-  transition: all 0.4s ease-in-out;
-  position: relative;
-  overflow: hidden;
+  background: radial-gradient(circle, #ff6b3a, #d9440f, #4d4d4d);
+  box-shadow: 0 0 20px rgba(255, 107, 58, 0.8), inset 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  transition: background 0.5s, box-shadow 0.5s;
 }
 
 .orb.lit {
-  background-color: #00bfff; /* Lighter sky blue when lit up */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 50px rgba(0, 191, 255, 0.8); /* Glowing effect */
-  animation: orbGlow 1.5s infinite alternate;
+  background: radial-gradient(circle, #ff6b3a, #ff4e1a, #d9440f);
+  box-shadow: 0 0 40px rgba(255, 107, 58, 1), 0 0 80px rgba(255, 78, 26, 0.8);
 }
 
-.orb.lit:before {
-  content: '';
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  width: 80%;
-  height: 80%;
-  background: radial-gradient(circle, rgba(0, 191, 255, 0.5) 0%, rgba(30, 144, 255, 0.2) 80%);
-  border-radius: 50%;
-  opacity: 0.6;
-  animation: orbPulse 2s infinite ease-in-out;
-}
-
-@keyframes orbGlow {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes orbPulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 0.9;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-}
-
-/* Button styling */
 .button-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  width: 100%;
 }
 
 .light-button {
-  padding: 15px 25px;
-  font-size: 18px;
-  background-color: #00bfff; /* Matching blue */
-  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #ff6b3a;
   border: none;
-  border-radius: 30px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(255, 107, 58, 0.8);
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
 }
 
 .light-button:hover {
-  background-color: #009de0;
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+  background-color: #ff4e1a;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 78, 26, 1);
+}
+
+.light-button:active {
+  background-color: #d9440f;
+  transform: scale(0.95);
+  box-shadow: 0 0 5px rgba(217, 68, 15, 0.8);
 }
